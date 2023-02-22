@@ -100,22 +100,29 @@ function disableMovePlayerBtn() {
   console.log("disable move buttons");
 }
 ```
+<br>
+
+## Final OutLook of the Snake and Ladder 2 Player Game
+![image](https://user-images.githubusercontent.com/122252464/220624402-27b71c9f-4f05-41fc-9249-aad81792729d.png)
+![G2](https://user-images.githubusercontent.com/122252464/220624514-6f222531-dc8d-4b51-807f-45ad089e371f.jpg)
+![image](https://user-images.githubusercontent.com/122252464/220624701-018986df-e662-4be5-b272-eef5fae30c9b.png)
+![image](https://user-images.githubusercontent.com/122252464/220624946-0803b8da-e98e-407f-98e2-5d6fd696b305.png)
+
 
 <br>
+
 ## Learning Points
 <br>
 
 ## Future Impovements
 
-1. (Multipplayers) Able to select more than 2 players
-
+1. (Multipplayers) Able to host more than 2 players
 - 3 players
 - 4 players
 
 2. Player Characters selection
 
 3. Different levels
-
 - lvl 2 (tile numbers increase to 50, with 2 more snakes and 1 ladder)
 - lvl 3 (tile numbers increased to 100, wiht 2 more long snakes and 2 short ladders)
   <br>
