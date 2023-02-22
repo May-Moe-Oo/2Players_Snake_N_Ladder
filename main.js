@@ -245,7 +245,6 @@ function movePlayers() {
     console.log("prevM is " + prevM);
     currM = tiles[rolledDice.innerText - 1] + prevM;
     console.log("currM is " + currM);
-    //! issue here
     playerlandOnNewTileNumMsg();
   }
 }
