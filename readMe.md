@@ -12,6 +12,7 @@
 - Game is deployed online.
 
 <br>
+
 ## Timeframe
 1 week
 <br>
@@ -22,6 +23,7 @@
 - JavaScript
 - GitHub
 - Visual Studio
+
 <br>
 
 ## Game Description
@@ -33,6 +35,7 @@ This game was made using HTML, CSS and JavaScript as the 1st project for my jour
 I started my programming journey due to my curiosity about how things become. The curiosity that I often felt when I was young. Thus, I wanted to recreate this simple beloved game that is one of my favourite games played and it reminds me of my childhood.
 
 <br>
+
 ## How to Play?
 *At the start of the game all players start at tile number 1.
 *Each player will take turns to roll the dice. Player 1 will start 1st.
@@ -40,11 +43,13 @@ I started my programming journey due to my curiosity about how things become. Th
 *If player lands at the bottom of a ladder, player can move up to the top of the ladder.
 *If player lands on the head of a snake, player must slide down to the bottom of the snake.
 *The first player to get to the space that says 'Home Tile 30' is the winner.
+
 <br>
 
 ## Game Deployment
 
 [Click to Play](https://maymoeoo95.github.io/2Players_Snake_N_Ladder/)
+
 <br>
 
 ## Approach to Deployment
@@ -230,6 +235,7 @@ function flipCharacter() {
 }
 flipCharacter();
 ``` 
+
 <br>
 
 ## Final OutLook of the Snake and Ladder 2 Player Game
@@ -238,10 +244,10 @@ flipCharacter();
 ![image](https://user-images.githubusercontent.com/122252464/220624701-018986df-e662-4be5-b272-eef5fae30c9b.png)
 ![image](https://user-images.githubusercontent.com/122252464/220624946-0803b8da-e98e-407f-98e2-5d6fd696b305.png)
 
-
 <br>
 
 ## Learning Points
+
 <br>
 
 ## Future Impovements
@@ -255,15 +261,19 @@ flipCharacter();
 3. Different levels
 - lvl 2 (tile numbers increase to 50, with 2 more snakes and 1 ladder)
 - lvl 3 (tile numbers increased to 100, wiht 2 more long snakes and 2 short ladders)
+
   <br>
 
 ## Summary
 
 <br>
+
 ## References
 [Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
 [How to disable and enable buttons](https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
+
 <br>
+
 ## Game Asset Atrributions
 The below assets in this game are not owned by me. All rights belong to their original owners and artists as shown in the links below:-
 
