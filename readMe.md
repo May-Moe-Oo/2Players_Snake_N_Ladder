@@ -85,7 +85,6 @@ function rollDice() {
     rolledDice.innerText = dice[randomIndex];
     enableMovePlayerBtn();
   });
-  renderAll();
 }
 ```
 
@@ -111,7 +110,7 @@ In HTML, class name of dontShow is tagged to each player icon in individual tile
     <img id="M30" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
 </div>
 ```
-In CSS,
+In CSS, 
 ```
 .dontShow{
    display:none;
@@ -130,8 +129,28 @@ function boardCharacters() {
 }
 ```
 
+* Determin the new tile the player icon is to be displayed and provide a message to player to inform them. Afterwards, disable the move player button as mentioned before. 
+```
+function movePlayers() {
+  if (character === "C") {
+    prevC = currC;
+    currC = tiles[rolledDice.innerText - 1] + prevC;
+  } else if (character === "M") {
+    prevM = currM;
+    console.log("prevM is " + prevM);
+    currM = tiles[rolledDice.innerText - 1] + prevM;
+  }
+  disableMovePlayerBtn();
+  playerlandOnNewTileNumMsg();
+}
+```
+
 * Bonus and obstacles -
-Landing on a sanke will get the player back by a few tiles while landing on the ladder gives player advantage of few tiles. Example below show the code for ladder.  
+Landing on a sanke will get the player back by a few tiles while landing on the ladder gives player advantage of few tiles. Alert box is also added to inform player that they have either landed on the ladder or snake. 
+![LadderPopUpMsg](https://user-images.githubusercontent.com/122252464/220667661-3ac834d5-f1a5-4b86-8816-5b0f8173e569.jpg)
+![SnakePopUpMsg](https://user-images.githubusercontent.com/122252464/220667717-a0a78b52-5823-4828-8031-445820598a59.jpg)
+
+Example below show the code for ladder.  
 Code before:-
 ```
 function bonusLadders() {
@@ -186,8 +205,26 @@ function bonusLadders() {
   }
 }
 ```
-
-*  
+Finally combining all the different function happen when player click the move player button. In summary:- 
+- when click move player button, player will move by the number of dice rolled plus the current tile number (the new current tile number is previouse tile number plus dice rolled).
+- if the new tile number is tile 30, player wins. if not game continues.
+- if the new tile number has ladder, player will transfer up the tile where the ladder's top and land on another new tile.
+- if the new tile number has snake, player will transfer down the tile where the snake's tail is located and land on another new tile.
+- the player character will be displayed at the final new tile and the all the previous player character on the old tile will not be displayed.
+- msg of the play final location will be displayed at Player moves to "tile X".
+```
+function flipCharacter() {
+  moveCharacters.addEventListener("click", function moveCharacters() {
+    channgePlayer();
+    movePlayers();
+    determineWinner();
+    bonusLadders();
+    obstacleSnake();
+    boardCharacters();
+  });
+}
+flipCharacter();
+``` 
 <br>
 
 ## Final OutLook of the Snake and Ladder 2 Player Game
