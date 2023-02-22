@@ -1,6 +1,7 @@
 # Developing a Snake And Ladder Game 2 Players by MayMoeOo95
 
 <br>
+
 ## Project Requirements
 - Render a game in the browser.
 - Include win/loss logic and render win/loss messages in HTML.
@@ -9,10 +10,12 @@
 - Have functions and variables that are named sensibly.
 - Be coded in a consistent manner.
 - Game is deployed online.
+
 <br>
 ## Timeframe
 1 week
 <br>
+
 ## Technologies and Tools Used
 - HTML
 - CSS
@@ -20,6 +23,7 @@
 - GitHub
 - Visual Studio
 <br>
+
 ## Game Description
 Snake And Ladder is a classic global board game that has been played since the 2nd century BC. 
 [Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms) 
