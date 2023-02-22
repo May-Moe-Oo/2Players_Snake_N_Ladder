@@ -21,8 +21,8 @@
 - Visual Studio
 <br>
 ## Game Description
-Snake And Ladder is a classic global board game that has been played since the 2nd century BC.[Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms) 
-This game was made using HTML, CSS and JavaScript as the 1st project for my journey at [Software Engineering Immersive Bootcamp](https://generalassemb.ly/education/software-engineering-immersive/singapore) at General Assembly .
+Snake And Ladder is a classic global board game that has been played since the 2nd century BC. ![Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms) 
+This game was made using HTML, CSS and JavaScript as the 1st project for my journey at ![Software Engineering Immersive Bootcamp](https://generalassemb.ly/education/software-engineering-immersive/singapore) at General Assembly .
 
 I started my programming journey due to my curiosity about how things become. The curiosity that I often felt when I was young. Thus, I wanted to recreate this simple beloved game that is one of my favourite games played and it reminds me of my childhood.
 
@@ -78,8 +78,9 @@ to add code snippets here
 
 <br>
 ## References
-[Game History] (https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
-[How to disable and enable buttons] (https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
+![Game History] (https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
+
+![How to disable and enable buttons] (https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
 <br>
 ## Game Asset Atrributions
 The below assets in this game are not owned by me. All rights belong to their original owners and artists as shown in the links below:-
