@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeAndLadder</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer="" src="main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Fjalla+One&family=Indie+Flower&family=Raleway:wght@100&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/eb19572df6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="welcomePg">
+        <h1>Snakes and Ladders 2 Players</h1>
+        <img src="./Resources/snake n ladder.png" alt="snake and ladder" style="width:400px;height:400px;"> 
+        <br>
+
+        <div id="characters">
+            <h1>Player 1 <br> <button id="cat" class="c"><img class="characterPlaying" src="./Resources/cat1.png" alt="Character1 = cat" style="width:80px;height:80px;"><br>Cat</button> </h1> 
+            <h1> Player 2 <br><button id="monkey" class="c"><img class="characterPlaying" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:80px;height:80px;"><br>Monkey</button> </h1>
+        </div> 
+        <h1>Lets play!</h1>
+        <button id="rulesButton" style="width:200px;height:100px;">Game On!</button>
+    </div>
+    <br>
+    <div id="rules" style="display: none"><h1 class="HTP" >How to play?</h1>
+        <div>
+            <h2>Be the 1st to Reach the End Tile 30!</h2>
+            <h2>All players start at Tile 1</h2>
+            <h2><span id="boot-icon" class="bi bi-ladder"
+                style="font-size: 100px; -webkit-text-stroke-width: 2px; color: rgb(165, 42, 42);"></span> = Player go &#8593</h2>
+            <h2>&#128013; = Player go &#8595</h2>
+        </div>
+        <button id="startButton" style="width:150px;height:100px;">Let's play</button>
+    </div>
+    <br>
+    <div id="playGame" style="display: none">
+        <h1> Snakes and Ladders</h1>
+        <div>
+            
+        </div>
+        &#127922; <button id="dicebutton" ><h2>Roll the Dice</h2></button> &#127922;
+        <div>
+            <h2>You roll: <span id="diceFaces"></span></h2>
+        </div>
+        <button id="movePlayer"><h2>Move Player</h2></button>
+        <h2>Player <span id="currentPlayer"> </span> moves to <span id="newTileNum"></span></h2>
+        <br>
+        <div id="container">
+            <br>
+            <div id ="r0" class="rows">
+                <div id="r0I5" class="tile">30 <br>
+                <img id="C30" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M30" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r0I4" class="tile">29 <br>
+                <img id="C29" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M29" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r0I3" class="tile">28 <br>
+                <img id="C28" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M28" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                <img class="ladder" src="./Resources/Ladder3.png" alt="ladder 3" style="width:100px;height:180px; margin-top: 10px;">
+                </div>
+                <div id="r0I2" class="tile">27 <br>
+                <img id="C27" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M27" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r0I1" class="tile">26 <br>
+                <img id="C26" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M26" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                <img class="snake" src="./Resources/snake4.png" alt="Snake 4" style="width:200px;height:290px; margin-left: 10px; margin-top: 10px;">
+                </div>
+                <div id="r0I0" class="tile">25 <br>
+                <img id="C25" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M25" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+            </div>
+            <div id ="r1" class="rows">
+                <div id="r1I5" class="tile">19<br>
+                <img id="C19" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M19" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                <img class="ladder" src="./Resources/Ladder3.png" alt="ladder 3" style="width:100px;height:320px; margin-top: 5px;">
+                </div>
+                <div id="r1I4" class="tile">20 <br>
+                <img id="C20" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M20" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r1I3" class="tile">21 <br>
+                <img id="C21" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M21" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r1I2" class="tile">22 <br>
+                <img id="C22" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M22" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px; ">
+                </div>
+                <div id="r1I1" class="tile">23 <br>
+                <img id="C23" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px; ">
+                <img id="M23" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r1I0" class="tile">24 <br>
+                <img id="C24" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M24" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+            </div>
+            <div id ="r2" class="rows">
+                <div id="r2I5" class="tile">18 <br>
+                <img id="C18" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M18" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r2I4" class="tile">17 <br>
+                <img id="C17" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M17" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r2I3" class="tile">16 <br>
+                <img id="C16" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M16" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                <img class="snake" src="./Resources/snake5.png" alt="Snake 5" style="width:150px;height:310px; margin-left:15px;">
+                </div>
+                <div id="r2I2" class="tile">15<br>
+                <img id="C15" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M15" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey"  style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r2I1" class="tile">14 <br>
+                <img id="C14" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M14" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r2I0" class="tile">13<br>
+                <img id="C13" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M13" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+            </div>
+            </div>
+            <div id ="r3" class="rows">
+                <div id="r3I5" class="tile">7 <br>
+                <img id="C7" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M7" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r3I4" class="tile">8 <br>
+                <img id="C8" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M8" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px; ">
+                </div>
+                <div id="r3I3" class="tile">9 <br>
+                <img id="C9" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M9" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r3I2" class="tile">10<br>
+                <img id="C10" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M10" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r3I1" class="tile">11<br>
+                <img id="C11" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M11" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                <img id="ladder1" class="ladder" src="./Resources/Ladder1.png" alt="ladder 1" style="width:150px;height:200px; margin-left: 15px;">
+                </div>
+                <div id="r3I0" class="tile">12 
+                <img id="C12" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M12" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 20px;">
+                <img class="snake" src="./Resources/snake3.png" alt="Snake 3" style="width:150px;height:200px; margin-left: 30px; ">
+                </div>
+            </div>
+            <div id ="r4" class="rows">
+                <div id="r4I5" class="tile">6 <br> 
+                <img id="C6" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M6" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r4I4" class="tile">5 <br> 
+                <img id="C5" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M5" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r4I3" class="tile">4 <br> 
+                <img id="C4" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M4" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r4I2" class="tile">3 <br>
+                <img id="C3" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M3" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+                <div id="r4I1" class="tile">2 <br>
+                <img id="C2" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M2" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                                </div>
+                <div id="r4I0" class="tile">1<br>
+                <img id="C1" class="character" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+                <img id="M1" class="character" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+                </div>
+            </div>
+            <br>
+        <div id="totalPlayers">All Players:
+            <div>
+            <img id="CatPlays" class="character" src="./Resources/cat1.png" alt="Character1 = cat" style="width:50px;height:50px;display: none">
+            <img id="MonkeyPlays" class="character" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px;display: none">
+            </div> 
+        </div>
+        </div>            
+    </div>
+    <div id="results" style="display: none">
+    <img src="./Resources/winner.png" height="400" width="400" alt="winner">
+    <h1><spam id="winner"></spam></h1>
+    <button id="restartButton">Challenge Again!</button>
+    <br>
+    <img class="J9AiF" style="margin-top: 20px;"
+        src="https://64.media.tumblr.com/f23f375df69b87fd5a307889dca557e1/310d6132e5945694-28/s500x750/29603a6ce275692b37b8f96309b6bef68b089cef.gifv"
+        height="400" width="400" alt="#myart from 想吃咖喱">
+</div>
+</body>
+</html>

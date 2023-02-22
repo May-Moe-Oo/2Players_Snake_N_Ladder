@@ -1,0 +1,124 @@
+
+body {
+    text-align: center;
+    background-image: url(./Resources/forest_Background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#welcomePg {
+    padding: 20px;
+    margin: 10px;
+}
+#playerNum {
+    margin-top: 30px;
+}
+
+#characterPlaying {
+    margin-top: 50px;
+}
+button.c {
+    font-weight: normal;
+    color: black;
+}
+
+button.c:focus {
+    color: rgb(209, 141, 16);
+}
+
+button.c:active {
+    font-weight: bold;
+}
+
+#rulesButton {
+    margin-top: 10px;
+    font-size: xx-large;
+    border-radius: 5px;
+    border-color: brown;
+}
+
+#rules{
+    text-align: center;
+    padding: 80px;
+    margin: 20px;
+    font-size: 30px;
+}
+#startButton{
+font-size: xx-large;
+    border-radius: 5px;
+    border-color: brown;
+}
+.HTP{
+    font-size: 90px;
+    color: #f04006;
+}
+#endGame {
+    margin-bottom: 20px;
+    
+}
+
+#container{
+    text-align: center;
+    width: 900px;
+    height: 800px;
+    border: 2px solid rgb(24, 175, 11);
+    border-radius: 8px;
+    border-style: outset;
+    background-color: rgb(146, 202, 166);
+    background-blend-mode: lighten;
+    position: relative;
+    left: 650px;
+}
+.tile {
+    border: 1px solid rgb(18, 18, 18);
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.rows {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.character {
+    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.dontShow{
+   display:none;
+}
+.show{
+   display:block;
+} 
+button {
+    cursor: pointer;
+}
+ button:hover {
+background-color: rgb(178, 188, 48);
+ }
+
+ #dicebutton #diceFaces {
+    border-radius: 8px;
+    border-color: brown;
+   width:150px;
+   height:60px;
+ }
+ #restartButton {
+    border-radius: 8px;
+    border-color: brown;
+    width: 250px;
+    height: 60px;
+    font-size: x-large
+ }
+
+#winner {
+    font-size: 100px;
+    color:rgb(209, 141, 16);
+    font-family: 'Carter One', cursive;
+
+}
+
