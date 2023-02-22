@@ -53,8 +53,47 @@ There will be 4 different screens in this game using different div.
 |3. Play Game Screen  | For players to play                                               |
 |4. Reset Screen      | To display the the winner and return back to the Welcome Screen   |
 
+* Show and Hide Screens
+It is very messy to show all the above screens at once, hence we need to show whats needed and hide the remainding. DOM addEventListener and CSS display = "none" and display = "block" helps to achieve it. 
+
+By default, only the Welcome Screen will be displayed. When player click on the ![image](https://user-images.githubusercontent.com/122252464/220621992-eef3973d-c722-48ef-92ee-fd7e0a79760d.png) button, Rules Screen will be disaplyed and the remainding will be hidden. Using this approach, I was able to organize and show individual screens as needed.  
+
 ```
-to add code snippets here
+function rulesButton() {
+  document.getElementById("rulesButton").addEventListener("click", function () {
+    screens[0].style.display = "none";
+    screens[1].style.display = "block";
+    screens[2].style.display = "none";
+    screens[3].style.display = "none";
+  });
+}
+```
+
+* Dice
+When the player click roll the dice button, randon number from 1 to 6 will be generated then the dice.innerText will be displayed to inform player the number they have rolled. The combination of Math.random and Math.floor method was used to generate the dice number. 
+
+```
+function rollDice() {
+  diceButton.addEventListener("click", function rollDice() {
+    const dice = [, 1, 2, 3, 4, 5, 6];
+    let randomIndex = Math.floor(Math.random() * 6 + 1);
+    rolledDice.innerText = dice[randomIndex];
+    enableMovePlayerBtn();
+  });
+  renderAll();
+}
+```
+
+* The Move player button is disable by default and its enable enable only after the dicebutton button has been clicked. This enable the player to only move after they roll the dice at their turn.  
+```
+function enableMovePlayerBtn() {
+  moveCharacters.removeAttribute("disabled");
+  console.log("enable move buttons");
+}
+function disableMovePlayerBtn() {
+  moveCharacters.disabled = true;
+  console.log("disable move buttons");
+}
 ```
 
 <br>
