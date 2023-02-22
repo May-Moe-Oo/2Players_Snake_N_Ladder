@@ -1,4 +1,3 @@
-//console.log("snake n ladders 2 players");
 /*----- constants -----*/
 let character = "M"; //current character (default)
 let prev;
@@ -73,18 +72,6 @@ function selectBoard() {
   }
 }
 
-// at the #totalPlayers div
-function catPlayingNow() {
-  document.getElementById("cat").addEventListener("click", function () {
-    catPlaying.style.display = "block";
-  });
-}
-function monkeyPlayingNow() {
-  document.getElementById("monkey").addEventListener("click", function () {
-    monkeyPlaying.style.display = "block";
-  });
-}
-
 //? click roll the dice button, randon number from 1 to 6 will be generated then the dice.innerText will be displayed below row the dice.
 function rollDice() {
   diceButton.addEventListener("click", function rollDice() {
@@ -111,11 +98,11 @@ function boardCharacters() {
   }
 }
 
-//? when click move player button, player will move by the number of dice rolled plus the current tile number (the new current tile number is previouse tile number plus dice rolled).  
+//? when click move player button, player will move by the number of dice rolled plus the current tile number (the new current tile number is previouse tile number plus dice rolled).
 //? if the new tile number is tile 30, player wins. if not game continues.
-//? if the new tile number has ladder, player will transfer up the tile where the ladder's top and land on another new tile.  
+//? if the new tile number has ladder, player will transfer up the tile where the ladder's top and land on another new tile.
 //? if the new tile number has snake, player will transfer down the tile where the snake's tail is located and land on another new tile.
-//? the player character will be displayed at the final new tile and the all the previous player character on the old tile will not be displayed. 
+//? the player character will be displayed at the final new tile and the all the previous player character on the old tile will not be displayed.
 //? msg of the play final location will be displayed at Player moves to "tile X".
 function moveCharacter() {
   moveCharacters.addEventListener("click", function moveCharacters() {
@@ -138,13 +125,6 @@ function changeScreens() {
   restartButton();
 }
 changeScreens();
-
-//? player display on game screen at #totalPlayers. When player click the character at the welcomePg, it will appear on the game screen at #totalPlayers.
-function displayAllPlayers() {
-  catPlayingNow();
-  monkeyPlayingNow();
-}
-displayAllPlayers();
 
 //! To populate tiles numbers for imgs
 function populateBoard() {
@@ -268,10 +248,9 @@ function movePlayers() {
     //! issue here
     playerlandOnNewTileNumMsg();
   }
-};
+}
 
-
-function playerlandOnNewTileNumMsg (){
+function playerlandOnNewTileNumMsg() {
   //new msg of where the player is
   if (character === "M") {
     playerNewTileNum.innerText = "tile no. " + currM;
@@ -283,13 +262,4 @@ function playerlandOnNewTileNumMsg (){
 function renderAll() {
   selectBoard();
   populateBoard();
-};
-
-
-//! to add the dice sound effect
-// function diceSound(){
-//   let diceAudio = new Audio('./dice.mp3');
-// diceAudio.diceButton();
-// };
-// diceSound();
-// diceButton.addEventListener("click", diceSound);
+}

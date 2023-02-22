@@ -56,17 +56,21 @@ font-size: xx-large;
     
 }
 
+#playGame {
+    margin-top: 0;
+
+}
 #container{
     text-align: center;
-    width: 900px;
-    height: 800px;
+    width: 800px;
+    height: 700px;
     border: 2px solid rgb(24, 175, 11);
     border-radius: 8px;
     border-style: outset;
     background-color: rgb(146, 202, 166);
     background-blend-mode: lighten;
     position: relative;
-    left: 650px;
+    left: 400px;
 }
 .tile {
     border: 1px solid rgb(18, 18, 18);
