@@ -74,20 +74,16 @@ function selectBoard() {
 
 //? click roll the dice button, randon number from 1 to 6 will be generated then the dice.innerText will be displayed below row the dice.
 function rollDice() {
-  // diceButton.removeAttribute("disabled");
   diceButton.addEventListener("click", function rollDice() {
     const dice = [, 1, 2, 3, 4, 5, 6];
     let randomIndex = Math.floor(Math.random() * 6 + 1);
     rolledDice.innerText = dice[randomIndex];
     enableMovePlayerBtn();
     //console.log(dice[randomIndex]);
-    // diceButton.disabled = true;
   });
-  renderAll();
 }
-
+//! if currC is tile 1 block, roll dice 2, new currC is tile 3 block and prevC is tile 1 none.
 function boardCharacters() {
-  //! if currC is tile 1 block, roll dice 2, new currC is tile 3 block and prevC is tile 1 none.
   if (character === "C") {
     document
       .getElementById(`${character}${currC}`)
@@ -100,8 +96,6 @@ function boardCharacters() {
     document.getElementById(`${character}${prevM}`).classList.add("dontShow");
   }
 }
-
-
 
 //? when click move player button, player will move by the number of dice rolled plus the current tile number (the new current tile number is previouse tile number plus dice rolled).
 //? if the new tile number is tile 30, player wins. if not game continues.
@@ -118,10 +112,8 @@ function flipCharacter() {
     obstacleSnake();
     boardCharacters();
   });
-  renderAll();
 }
 flipCharacter();
-// disableMovePlayerBtn();
 
 /*----- functions -----*/
 //? At the start, on load only screens.welcomePage is displayed.
@@ -170,95 +162,65 @@ function determineWinner() {
     screens[3].style.display = "block";
     winner.innerText = "Player Cat";
   }
-  renderAll();
 }
 //! ladder for cat and monkey
 function bonusLadders() {
-  //ladders for Cat
-  if (currC === 3) {
-    currC = 11;
-    alert("WOW Ladder! Cat moves to tile 11!");
-    playerlandOnNewTileNumMsg();
-  } else if (currC === 7) {
-    currC = 19;
-    alert("WOW Ladder! Cat moves to tile 19!");
-    playerlandOnNewTileNumMsg();
-  } else if (currC === 21) {
-    currC = 28;
-    alert("WOW Ladder! Cat moves to tile 28!");
+  const ladderPositions = {
+    3: 11,
+    7: 19,
+    21: 28,
+  };
+  const catLadderPosition = ladderPositions[currC];
+  const monkeyLadderPosition = ladderPositions[currM];
+  if (catLadderPosition) {
+    currC = catLadderPosition;
+    alert(`WOW Ladder! Cat moves to tile ${currC}!`);
     playerlandOnNewTileNumMsg();
   }
-  //ladders for Monkey
-  if (currM === 3) {
-    currM = 11;
-    alert("WOW a Ladder! Monkey moves to tile 11!");
-    playerlandOnNewTileNumMsg();
-    //console.log("M at 3 to 11?" +currM);
-  } else if (currM === 7) {
-    currM = 19;
-    alert("WOW a Ladder! Monkey moves to tile 19!");
-    playerlandOnNewTileNumMsg();
-    //console.log("M at 8 to 19?" + currM);
-  } else if (currM === 21) {
-    currM = 28;
-    alert("WOW a Ladder! Monkey moves to tile 28!");
+  if (monkeyLadderPosition) {
+    currM = monkeyLadderPosition;
+    alert(`WOW a Ladder! Monkey moves to tile ${currM}!`);
     playerlandOnNewTileNumMsg();
   }
 }
 
 //! snake for cat and monkey
 function obstacleSnake() {
-  // snake for Cat
-  if (currC === 12) {
-    currC = 2;
-    alert("Yikes! Snake... Cat moves to tile 2!");
-    playerlandOnNewTileNumMsg();
-  } else if (currC === 16) {
-    currC = 5;
-    alert("Yikes! Snake... Cat moves to tile 5!");
-    playerlandOnNewTileNumMsg();
-  } else if (currC === 26) {
-    currC = 15;
-    alert("Yikes! Snake... Cat moves to tile 15!");
+  const snakePositions = {
+    12: 2,
+    16: 5,
+    26: 15,
+  };
+  const catSnakePosition = snakePositions[currC];
+  const monkeySnakePosition = snakePositions[currM];
+  if (catSnakePosition) {
+    currC = catSnakePosition;
+    alert(`Yikes! Snake... Cat moves to tile ${currC}!`);
     playerlandOnNewTileNumMsg();
   }
-  // snake for Monkey
-  if (currM === 12) {
-    currM = 2;
-    alert("Yikes! Snake... Monkey moves to tile 2!");
-    playerlandOnNewTileNumMsg();
-  } else if (currM === 16) {
-    currM = 5;
-    alert("Yikes! Snake... Monkey moves to tile 5!");
-    playerlandOnNewTileNumMsg();
-  } else if (currM === 26) {
-    currM = 15;
-    alert("Yikes! Snake... Monkey moves to tile 15!");
+  if (monkeySnakePosition) {
+    currM = monkeySnakePosition;
+    alert(`Yikes! Snake... Monkey moves to tile ${currM}!`);
     playerlandOnNewTileNumMsg();
   }
 }
 
 function movePlayers() {
-  // prev = curr;
   if (character === "C") {
     prevC = currC;
     currC = tiles[rolledDice.innerText - 1] + prevC;
-    disableMovePlayerBtn();
     console.log("currC is " + currC);
-    // insert chg message here?
-    playerlandOnNewTileNumMsg();
   } else if (character === "M") {
     prevM = currM;
     console.log("prevM is " + prevM);
     currM = tiles[rolledDice.innerText - 1] + prevM;
-    disableMovePlayerBtn();
     console.log("currM is " + currM);
-    playerlandOnNewTileNumMsg();
   }
+  disableMovePlayerBtn();
+  playerlandOnNewTileNumMsg();
 }
 
 function playerlandOnNewTileNumMsg() {
-  //new msg of where the player is
   if (character === "M") {
     playerNewTileNum.innerText = "tile no. " + currM;
   } else if (character === "C") {
@@ -280,3 +242,4 @@ function renderAll() {
   selectBoard();
   populateBoard();
 }
+renderAll();

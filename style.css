@@ -95,9 +95,7 @@ font-size: xx-large;
 .dontShow{
    display:none;
 }
-.show{
-   display:block;
-} 
+
 button {
     cursor: pointer;
 }
