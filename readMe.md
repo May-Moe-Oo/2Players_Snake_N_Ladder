@@ -58,7 +58,7 @@ There will be 4 different screens in this game using different div.
 ![image](https://user-images.githubusercontent.com/122252464/220623258-9a2266d4-ae69-48d1-87fd-45630eac576f.png)
 ![image](https://user-images.githubusercontent.com/122252464/220623358-bd6ee427-7f36-4f5e-8926-5f1d9cfea07b.png)
 
-* Show and Hide Screens
+* Show and Hide Screens - 
 It is very messy to show all the above screens at once, hence we need to show whats needed and hide the remainding. DOM addEventListener and CSS display = "none" and display = "block" helps to achieve it. 
 
 By default, only the Welcome Screen will be displayed. When player click on the ![image](https://user-images.githubusercontent.com/122252464/220621992-eef3973d-c722-48ef-92ee-fd7e0a79760d.png) button, Rules Screen will be disaplyed and the remainding will be hidden. Using this approach, I was able to organize and show individual screens as needed.  
@@ -74,7 +74,7 @@ function rulesButton() {
 }
 ```
 
-* Dice
+* Dice - 
 When the player click roll the dice button, randon number from 1 to 6 will be generated then the dice.innerText will be displayed to inform player the number they have rolled. The combination of Math.random and Math.floor method was used to generate the dice number. 
 
 ```
@@ -90,6 +90,7 @@ function rollDice() {
 ```
 
 * The Move player button is disable by default and its enable enable only after the dicebutton button has been clicked. This enable the player to only move after they roll the dice at their turn.  
+
 ```
 function enableMovePlayerBtn() {
   moveCharacters.removeAttribute("disabled");
@@ -100,6 +101,93 @@ function disableMovePlayerBtn() {
   console.log("disable move buttons");
 }
 ```
+
+* Moving the players move - using the show and hide methods mention above, the icons of both player will be turn on and off according to the new position of the player which is determined by current position plus dice number the player has rolled.
+Before  
+In HTML, class name of dontShow is tagged to each player icon in individual tiles. Example of tile number 30 is shown below. 
+```
+<div id="r0I5" class="tile">30 <br>
+    <img id="C30" class="character dontShow" src="./Resources/cat1.png" alt="Character1 = cat" style="width:40px;height:40px; margin-left: 50px;">
+    <img id="M30" class="character dontShow" src="./Resources/Monkey.png" alt="Character3 = monkey" style="width:50px;height:50px; margin-left: 10px;">
+</div>
+```
+In CSS,
+```
+.dontShow{
+   display:none;
+}
+```
+In Javascript, using DOM manipulation, player icons of tile 2 to 30 can be manipulated to either show or hide.
+```
+function boardCharacters() {
+  if (character === "C") {
+    document.getElementById(`${character}${currC}`).classList.remove("dontShow"); 
+    document.getElementById(`${character}${prevC}`).classList.add("dontShow");
+  } else {
+    document.getElementById(`${character}${currM}`).classList.remove("dontShow");
+    document.getElementById(`${character}${prevM}`).classList.add("dontShow");
+  }
+}
+```
+
+* Bonus and obstacles -
+Landing on a sanke will get the player back by a few tiles while landing on the ladder gives player advantage of few tiles. Example below show the code for ladder.  
+Code before:-
+```
+function bonusLadders() {
+  if (currC === 3) {
+    currC = 11;
+    alert("WOW Ladder! Cat moves to tile 11!");
+    playerlandOnNewTileNumMsg();
+  } else if (currC === 7) {
+    currC = 19;
+    alert("WOW Ladder! Cat moves to tile 19!");
+    playerlandOnNewTileNumMsg();
+  } else if (currC === 21) {
+    currC = 28;
+    alert("WOW Ladder! Cat moves to tile 28!");
+    playerlandOnNewTileNumMsg();
+  }
+  if (currM === 3) {
+    currM = 11;
+    alert("WOW a Ladder! Monkey moves to tile 11!");
+    playerlandOnNewTileNumMsg();
+  } else if (currM === 7) {
+    currM = 19;
+    alert("WOW a Ladder! Monkey moves to tile 19!");
+    playerlandOnNewTileNumMsg();
+  } else if (currM === 21) {
+    currM = 28;
+    alert("WOW a Ladder! Monkey moves to tile 28!");
+    playerlandOnNewTileNumMsg();
+  }
+}
+```
+
+Code after:-
+```
+function bonusLadders() {
+  const ladderPositions = {
+    3: 11,
+    7: 19,
+    21: 28,
+  };
+  const catLadderPosition = ladderPositions[currC];
+  const monkeyLadderPosition = ladderPositions[currM];
+  if (catLadderPosition) {
+    currC = catLadderPosition;
+    alert(`WOW Ladder! Cat moves to tile ${currC}!`);
+    playerlandOnNewTileNumMsg();
+  }
+  if (monkeyLadderPosition) {
+    currM = monkeyLadderPosition;
+    alert(`WOW a Ladder! Monkey moves to tile ${currM}!`);
+    playerlandOnNewTileNumMsg();
+  }
+}
+```
+
+*  
 <br>
 
 ## Final OutLook of the Snake and Ladder 2 Player Game
