@@ -53,6 +53,11 @@ There will be 4 different screens in this game using different div.
 |3. Play Game Screen  | For players to play                                               |
 |4. Reset Screen      | To display the the winner and return back to the Welcome Screen   |
 
+![image](https://user-images.githubusercontent.com/122252464/220623053-47ec65bd-6ce6-432a-a60d-edd02d2c9fa2.png)
+![image](https://user-images.githubusercontent.com/122252464/220623164-354558c8-8de9-484f-9eaf-3d0acf3dceff.png)
+![image](https://user-images.githubusercontent.com/122252464/220623258-9a2266d4-ae69-48d1-87fd-45630eac576f.png)
+![image](https://user-images.githubusercontent.com/122252464/220623358-bd6ee427-7f36-4f5e-8926-5f1d9cfea07b.png)
+
 * Show and Hide Screens
 It is very messy to show all the above screens at once, hence we need to show whats needed and hide the remainding. DOM addEventListener and CSS display = "none" and display = "block" helps to achieve it. 
 
