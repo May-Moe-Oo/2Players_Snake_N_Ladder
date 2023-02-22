@@ -209,7 +209,8 @@ function bonusLadders() {
   }
 }
 ```
-Finally combining all the different function happen when player click the move player button. In summary:- 
+
+* Finally combining all the different function happen when player click the move player button. In summary:- 
 - when click move player button, player will move by the number of dice rolled plus the current tile number (the new current tile number is previouse tile number plus dice rolled).
 - if the new tile number is tile 30, player wins. if not game continues.
 - if the new tile number has ladder, player will transfer up the tile where the ladder's top and land on another new tile.
