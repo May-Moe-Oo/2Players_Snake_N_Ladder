@@ -74,11 +74,14 @@ function selectBoard() {
 
 //? click roll the dice button, randon number from 1 to 6 will be generated then the dice.innerText will be displayed below row the dice.
 function rollDice() {
+  // diceButton.removeAttribute("disabled");
   diceButton.addEventListener("click", function rollDice() {
     const dice = [, 1, 2, 3, 4, 5, 6];
     let randomIndex = Math.floor(Math.random() * 6 + 1);
     rolledDice.innerText = dice[randomIndex];
+    enableMovePlayerBtn();
     //console.log(dice[randomIndex]);
+    // diceButton.disabled = true;
   });
   renderAll();
 }
@@ -98,13 +101,15 @@ function boardCharacters() {
   }
 }
 
+
+
 //? when click move player button, player will move by the number of dice rolled plus the current tile number (the new current tile number is previouse tile number plus dice rolled).
 //? if the new tile number is tile 30, player wins. if not game continues.
 //? if the new tile number has ladder, player will transfer up the tile where the ladder's top and land on another new tile.
 //? if the new tile number has snake, player will transfer down the tile where the snake's tail is located and land on another new tile.
 //? the player character will be displayed at the final new tile and the all the previous player character on the old tile will not be displayed.
 //? msg of the play final location will be displayed at Player moves to "tile X".
-function moveCharacter() {
+function flipCharacter() {
   moveCharacters.addEventListener("click", function moveCharacters() {
     channgePlayer();
     movePlayers();
@@ -115,7 +120,8 @@ function moveCharacter() {
   });
   renderAll();
 }
-moveCharacter();
+flipCharacter();
+// disableMovePlayerBtn();
 
 /*----- functions -----*/
 //? At the start, on load only screens.welcomePage is displayed.
@@ -237,6 +243,7 @@ function movePlayers() {
   if (character === "C") {
     prevC = currC;
     currC = tiles[rolledDice.innerText - 1] + prevC;
+    disableMovePlayerBtn();
     console.log("currC is " + currC);
     // insert chg message here?
     playerlandOnNewTileNumMsg();
@@ -244,6 +251,7 @@ function movePlayers() {
     prevM = currM;
     console.log("prevM is " + prevM);
     currM = tiles[rolledDice.innerText - 1] + prevM;
+    disableMovePlayerBtn();
     console.log("currM is " + currM);
     playerlandOnNewTileNumMsg();
   }
@@ -256,6 +264,16 @@ function playerlandOnNewTileNumMsg() {
   } else if (character === "C") {
     playerNewTileNum.innerText = "tile no. " + currC;
   }
+}
+
+function enableMovePlayerBtn() {
+  moveCharacters.removeAttribute("disabled");
+  console.log("enable move buttons");
+}
+
+function disableMovePlayerBtn() {
+  moveCharacters.disabled = true;
+  console.log("disable move buttons");
 }
 
 function renderAll() {
