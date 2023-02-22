@@ -79,11 +79,8 @@ to add code snippets here
 <br>
 ## References
 [Game History] (https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
+[How to disable and enable buttons] (https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
 <br>
 ## Game Asset Atrributions
 The below assets in this game are not owned by me. All rights belong to their original owners and artists as shown in the links below:-
-#� �S�n�a�k�e�s�-�L�a�d�d�e�r�s�
-�
-�#� �S�n�a�k�e�s�-�L�a�d�d�e�r�s�
-�
-�
+
