@@ -186,7 +186,7 @@ function bonusLadders() {
 }
 ```
 
-* When the player clicks the move player button, all the functions mentioned above will work accordingly. 
+* When the player clicks the move player button, flipCharacter function will run and the various functions will run accordingly. 
 
 ```
 function flipCharacter() {
