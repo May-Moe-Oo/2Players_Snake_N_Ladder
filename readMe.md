@@ -199,7 +199,8 @@ function flipCharacter() {
 }
 flipCharacter();
 ``` 
-* In summary:- 
+In summary:-
+
 When the player clicks the move player button, the player will move by the number of dice rolled plus the current tile number (For example, if the player is on tile 2 and rolled a "3", the player will move to tile 5).
 
 If the new tile number is tile 30, the player wins. If not the game will continue.
@@ -211,7 +212,6 @@ If the player lands on a tile with a ladder, the player will transfer up to the 
 The final position of the player in that round will be determined by the condition of the tile. The player icon will be displayed on its turn’s final position. 
 
 Message of the player’s final location will be displayed at Player moved to "tile X".
-
 <br>
 
 ## Final OutLook of the Snake and Ladder 2 Player Game
