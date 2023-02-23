@@ -83,7 +83,8 @@ font-size: xx-large;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: botton;
+    font-size: 21px;
 }
 
 .character {

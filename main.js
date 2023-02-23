@@ -9,18 +9,18 @@ let prevM;
 /*----- state variables -----*/
 const boardTiles = [];
 // i = rows & j = columns
-const tiles = []; //! To populate tiles numbers for imgs
+const tiles = []; //! To populate tiles
 
 /*----- cached elements  -----*/
-const welcomePage = document.getElementById("welcomePg"); // welcome screen
-const instruction = document.getElementById("rules"); // rules screen
-const gameArea = document.getElementById("playGame"); // play game screen
-const results = document.getElementById("results"); // result screen
+const welcomePage = document.getElementById("welcomePg"); 
+const instruction = document.getElementById("rules"); 
+const gameArea = document.getElementById("playGame"); 
+const results = document.getElementById("results"); 
 const screens = [welcomePage, instruction, gameArea, results];
-const board = document.getElementById("board"); // the playing board 30tiles
+const board = document.getElementById("board"); 
 const rolledDice = document.getElementById("diceFaces");
-const catPlaying = document.getElementById("CatPlays"); // cat in display player inside board
-const monkeyPlaying = document.getElementById("MonkeyPlays"); // monkey in display player inside board
+//const catPlaying = document.getElementById("CatPlays"); // cat in display player inside board
+//const monkeyPlaying = document.getElementById("MonkeyPlays"); // monkey in display player inside board
 const diceButton = document.getElementById("dicebutton"); // dice button
 let player = document.getElementById("currentPlayer"); // to change players turn
 const moveCharacters = document.getElementById("movePlayer");
@@ -79,6 +79,7 @@ function rollDice() {
     let randomIndex = Math.floor(Math.random() * 6 + 1);
     rolledDice.innerText = dice[randomIndex];
     enableMovePlayerBtn();
+    disableDiceBtn();
     //console.log(dice[randomIndex]);
   });
 }
@@ -218,6 +219,7 @@ function movePlayers() {
   }
   disableMovePlayerBtn();
   playerlandOnNewTileNumMsg();
+  enableDiceBtn();
 }
 
 function playerlandOnNewTileNumMsg() {
@@ -237,6 +239,17 @@ function disableMovePlayerBtn() {
   moveCharacters.disabled = true;
   console.log("disable move buttons");
 }
+
+function enableDiceBtn() {
+  diceButton.removeAttribute("disabled");
+  console.log("enable dice buttons");
+}
+
+function disableDiceBtn() {
+  diceButton.disabled = true;
+  console.log("disable dice buttons");
+}
+
 
 function renderAll() {
   selectBoard();
