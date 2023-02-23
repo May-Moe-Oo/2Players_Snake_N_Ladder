@@ -106,7 +106,7 @@ function boardCharacters() {
 //? msg of the play final location will be displayed at Player moves to "tile X".
 function flipCharacter() {
   moveCharacters.addEventListener("click", function moveCharacters() {
-    channgePlayer();
+    changePlayer();
     movePlayers();
     determineWinner();
     bonusLadders();
@@ -135,7 +135,7 @@ function populateBoard() {
 rollDice();
 
 //! to change players turn
-function channgePlayer() {
+function changePlayer() {
   if (character === "M") {
     character = "C";
     player.innerText = "Cat";
