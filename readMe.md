@@ -37,12 +37,12 @@ I started my programming journey due to my curiosity about how things become. Th
 <br>
 
 ## How to Play?
-*At the start of the game all players start at tile number 1.
-*Each player will take turns to roll the dice. Player 1 will start 1st.
-*Player will move forward the number of spaces shown on the dice.
-*If player lands at the bottom of a ladder, player can move up to the top of the ladder.
-*If player lands on the head of a snake, player must slide down to the bottom of the snake.
-*The first player to get to the space that says 'Home Tile 30' is the winner.
+- At the start of the game all players start at tile number 1.
+- Each player will take turns to roll the dice. Player 1 will start 1st.
+- Player will move forward the number of spaces shown on the dice.
+- If player lands at the bottom of a ladder, player can move up to the top of the ladder.
+- If player lands on the head of a snake, player must slide down to the bottom of the snake.
+- The first player to get to the space that says 'Home Tile 30' is the winner.
 
 <br>
 
