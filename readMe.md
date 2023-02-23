@@ -237,8 +237,8 @@ Message of the player’s final location will be displayed at Player moved to "t
 2. Player Characters selection
 
 3. Different levels
-- lvl 2 (tile numbers increase to 50, with 2 more snakes and 1 ladder)
-- lvl 3 (tile numbers increased to 100, with 2 more long snakes and 2 short ladders)
+- Level 2 (tile numbers increase to 50, with 2 more snakes and 1 ladder)
+- Level 3 (tile numbers increased to 100, with 2 more long snakes and 2 short ladders)
 
   <br>
 
