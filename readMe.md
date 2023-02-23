@@ -260,4 +260,4 @@ The below assets in this game are not owned by me. All rights belong to their or
 - [Ladder](https://fontawesomeicons.com/bootstrap/icons/ladder)
 - [Snake](https://fontawesomeicons.com/emoji/icons/snake#:~:text=Unicode%20of%20Snake%20%22%F0%9F%90%8D%22%20Emoji) 
 - [Dice](https://fontawesomeicons.com/emoji/icons/game-die) 
-- [Background]([https://as1.ftcdn.net/v2/jpg/02/34/60/52/1000_F_234605262_fuHuL9PdJYFEIUWx2DDWF7zPhvGKKVaq.jpg](https://stock.adobe.com/images/watercolor-group-of-trees-fir-pine-cedar-fir-tree-green-forest-landscape-forest-landscape-drawing-on-white-isolated-background-misty-forest-in-haz-ecological-poster-watercolor-painting/234605262))
+- [Background]([https://as1.ftcdn.net/v2/jpg/02/34/60/52/1000_F_234605262_fuHuL9PdJYFEIUWx2DDWF7zPhvGKKVaq.jpg](https://stock.adobe.com/images/watercolor-group-of-trees-fir-pine-cedar-fir-tree-green-forest-landscape-forest-landscape-drawing-on-white-isolated-background-misty-forest-in-haz-ecological-poster-watercolor-painting/234605262)
