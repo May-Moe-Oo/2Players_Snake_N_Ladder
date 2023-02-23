@@ -70,7 +70,7 @@ There will be 4 different screens in this game using different div.
 * Show and Hide Screens - 
 It is very messy to show all the above screens at once, hence we need to show whats needed and hide the remainding. DOM addEventListener and CSS display = "none" and display = "block" helps to achieve it. 
 
-By default, only the Welcome Screen will be displayed. When player click on the ![image](https://user-images.githubusercontent.com/122252464/220621992-eef3973d-c722-48ef-92ee-fd7e0a79760d.png) button, Rules Screen will be disaplyed and the remainding will be hidden. Using this approach, I was able to organize and show individual screens as needed.  
+By default, only the Welcome Screen will be displayed. When player click on the ![image](https://user-images.githubusercontent.com/122252464/220621992-eef3973d-c722-48ef-92ee-fd7e0a79760d.png) button, Rules Screen will be displayed and the remaining will be hidden. Using this approach, I was able to organize and show individual screens as needed.  
 
 ```
 function rulesButton() {
