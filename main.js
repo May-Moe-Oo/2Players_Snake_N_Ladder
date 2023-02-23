@@ -1,34 +1,30 @@
 /*----- constants -----*/
-let character = "M"; //current character (default)
+/*----- state variables -----*/
+const boardTiles = [];
+const tiles = [];
+let character = "M";
 let prev;
-let curr = 1; //tile character are standing at now
+let curr = 1;
 let currC = 1;
 let currM = 1;
 let prevC;
 let prevM;
-/*----- state variables -----*/
-const boardTiles = [];
-// i = rows & j = columns
-const tiles = []; //! To populate tiles
 
 /*----- cached elements  -----*/
-const welcomePage = document.getElementById("welcomePg"); 
-const instruction = document.getElementById("rules"); 
-const gameArea = document.getElementById("playGame"); 
-const results = document.getElementById("results"); 
+const welcomePage = document.getElementById("welcomePg");
+const instruction = document.getElementById("rules");
+const gameArea = document.getElementById("playGame");
+const results = document.getElementById("results");
 const screens = [welcomePage, instruction, gameArea, results];
-const board = document.getElementById("board"); 
+const board = document.getElementById("board");
 const rolledDice = document.getElementById("diceFaces");
-//const catPlaying = document.getElementById("CatPlays"); // cat in display player inside board
-//const monkeyPlaying = document.getElementById("MonkeyPlays"); // monkey in display player inside board
-const diceButton = document.getElementById("dicebutton"); // dice button
-let player = document.getElementById("currentPlayer"); // to change players turn
+const diceButton = document.getElementById("dicebutton");
+let player = document.getElementById("currentPlayer");
 const moveCharacters = document.getElementById("movePlayer");
 let playerNewTileNum = document.getElementById("newTileNum");
 let winner = document.getElementById("winner");
 /*----- event listeners -----*/
 
-//? when click the "Game On" button, screens on instruction is displayed and screens on welcomePage and other screens disappear.
 function rulesButton() {
   document.getElementById("rulesButton").addEventListener("click", function () {
     screens[0].style.display = "none";
@@ -38,7 +34,6 @@ function rulesButton() {
   });
 }
 
-//? when click the "let's play" button, screens on gameArea is displayed and screens oninstruction and other screens disappear.
 function startButton() {
   document.getElementById("startButton").addEventListener("click", function () {
     screens[0].style.display = "none";
@@ -47,7 +42,7 @@ function startButton() {
     screens[3].style.display = "none";
   });
 }
-//? when click the "challange Again!" button, screens on gameArea is displayed and reset and screens on results and other screens disappear.
+
 function restartButton() {
   document
     .getElementById("restartButton")
@@ -56,10 +51,10 @@ function restartButton() {
       screens[1].style.display = "none";
       screens[2].style.display = "none";
       screens[3].style.display = "none";
-      document.location.reload(); // reloads the current document.
+      document.location.reload();
     });
 }
-
+// i = rows & j = columns
 function selectBoard() {
   for (let i = 0; i < 5; i++) {
     const row = [];
@@ -68,11 +63,9 @@ function selectBoard() {
       row.push(element);
     }
     boardTiles.push(row);
-    //console.log("row0 index0 tile num is" + boardTiles[0][0].innerText);
   }
 }
 
-//? click roll the dice button, randon number from 1 to 6 will be generated then the dice.innerText will be displayed below row the dice.
 function rollDice() {
   diceButton.addEventListener("click", function rollDice() {
     const dice = [, 1, 2, 3, 4, 5, 6];
@@ -80,15 +73,14 @@ function rollDice() {
     rolledDice.innerText = dice[randomIndex];
     enableMovePlayerBtn();
     disableDiceBtn();
-    //console.log(dice[randomIndex]);
   });
 }
-//! if currC is tile 1 block, roll dice 2, new currC is tile 3 block and prevC is tile 1 none.
+
 function boardCharacters() {
   if (character === "C") {
     document
       .getElementById(`${character}${currC}`)
-      .classList.remove("dontShow"); //changes display to block for class = "dontShow".
+      .classList.remove("dontShow");
     document.getElementById(`${character}${prevC}`).classList.add("dontShow");
   } else {
     document
@@ -98,12 +90,6 @@ function boardCharacters() {
   }
 }
 
-//? when click move player button, player will move by the number of dice rolled plus the current tile number (the new current tile number is previouse tile number plus dice rolled).
-//? if the new tile number is tile 30, player wins. if not game continues.
-//? if the new tile number has ladder, player will transfer up the tile where the ladder's top and land on another new tile.
-//? if the new tile number has snake, player will transfer down the tile where the snake's tail is located and land on another new tile.
-//? the player character will be displayed at the final new tile and the all the previous player character on the old tile will not be displayed.
-//? msg of the play final location will be displayed at Player moves to "tile X".
 function flipCharacter() {
   moveCharacters.addEventListener("click", function moveCharacters() {
     changePlayer();
@@ -117,7 +103,6 @@ function flipCharacter() {
 flipCharacter();
 
 /*----- functions -----*/
-//? At the start, on load only screens.welcomePage is displayed.
 function changeScreens() {
   rulesButton();
   startButton();
@@ -125,16 +110,14 @@ function changeScreens() {
 }
 changeScreens();
 
-//! To populate tiles numbers for imgs
 function populateBoard() {
   for (let i = 1; i <= 30; i++) {
     tiles.push(i);
   }
 }
-//console.log("populated tiles" + tiles);
+
 rollDice();
 
-//! to change players turn
 function changePlayer() {
   if (character === "M") {
     character = "C";
@@ -143,9 +126,8 @@ function changePlayer() {
     character = "M";
     player.innerText = "Monkey";
   }
-  //console.log(`Current player is ${character}`);
 }
-//! winner
+
 function determineWinner() {
   if (currM >= 30) {
     currM = 30;
@@ -164,7 +146,7 @@ function determineWinner() {
     winner.innerText = "Player Cat";
   }
 }
-//! ladder for cat and monkey
+
 function bonusLadders() {
   const ladderPositions = {
     3: 11,
@@ -185,7 +167,6 @@ function bonusLadders() {
   }
 }
 
-//! snake for cat and monkey
 function obstacleSnake() {
   const snakePositions = {
     12: 2,
@@ -210,12 +191,9 @@ function movePlayers() {
   if (character === "C") {
     prevC = currC;
     currC = tiles[rolledDice.innerText - 1] + prevC;
-    console.log("currC is " + currC);
   } else if (character === "M") {
     prevM = currM;
-    console.log("prevM is " + prevM);
     currM = tiles[rolledDice.innerText - 1] + prevM;
-    console.log("currM is " + currM);
   }
   disableMovePlayerBtn();
   playerlandOnNewTileNumMsg();
@@ -232,24 +210,19 @@ function playerlandOnNewTileNumMsg() {
 
 function enableMovePlayerBtn() {
   moveCharacters.removeAttribute("disabled");
-  console.log("enable move buttons");
 }
 
 function disableMovePlayerBtn() {
   moveCharacters.disabled = true;
-  console.log("disable move buttons");
 }
 
 function enableDiceBtn() {
   diceButton.removeAttribute("disabled");
-  console.log("enable dice buttons");
 }
 
 function disableDiceBtn() {
   diceButton.disabled = true;
-  console.log("disable dice buttons");
 }
-
 
 function renderAll() {
   selectBoard();
