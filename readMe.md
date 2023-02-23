@@ -37,12 +37,12 @@ I started my programming journey due to my curiosity about how things become. Th
 <br>
 
 ## How to Play?
-*At the start of the game all players start at tile number 1.
-*Each player will take turns to roll the dice. Player 1 will start 1st.
-*Player will move forward the number of spaces shown on the dice.
-*If player lands at the bottom of a ladder, player can move up to the top of the ladder.
-*If player lands on the head of a snake, player must slide down to the bottom of the snake.
-*The first player to get to the space that says 'Home Tile 30' is the winner.
+- At the start of the game all players start at tile number 1.
+- Each player will take turns to roll the dice. Player 1 will start 1st.
+- Player will move forward the number of spaces shown on the dice.
+- If player lands at the bottom of a ladder, player can move up to the top of the ladder.
+- If player lands on the head of a snake, player must slide down to the bottom of the snake.
+- The first player to get to the space that says 'Home Tile 30' is the winner.
 
 <br>
 
@@ -70,7 +70,7 @@ There will be 4 different screens in this game using different div.
 * Show and Hide Screens - 
 It is very messy to show all the above screens at once, hence we need to show whats needed and hide the remainding. DOM addEventListener and CSS display = "none" and display = "block" helps to achieve it. 
 
-By default, only the Welcome Screen will be displayed. When player click on the ![image](https://user-images.githubusercontent.com/122252464/220621992-eef3973d-c722-48ef-92ee-fd7e0a79760d.png) button, Rules Screen will be disaplyed and the remainding will be hidden. Using this approach, I was able to organize and show individual screens as needed.  
+By default, only the Welcome Screen will be displayed. When player click on the ![image](https://user-images.githubusercontent.com/122252464/220621992-eef3973d-c722-48ef-92ee-fd7e0a79760d.png) button, Rules Screen will be displayed and the remaining will be hidden. Using this approach, I was able to organize and show individual screens as needed.  
 
 ```
 function rulesButton() {
@@ -84,7 +84,7 @@ function rulesButton() {
 ```
 
 * Dice - 
-When the player click roll the dice button, randon number from 1 to 6 will be generated then the dice.innerText will be displayed to inform player the number they have rolled. The combination of Math.random and Math.floor method was used to generate the dice number. 
+When the player click roll the dice button, random number from 1 to 6 will be generated then the dice.innerText will be displayed to inform player the number they have rolled. The combination of Math.random and Math.floor method was used to generate the dice number. 
 
 ```
 function rollDice() {
@@ -97,7 +97,7 @@ function rollDice() {
 }
 ```
 
-* The Move player button is disable by default and its enable enable only after the dicebutton button has been clicked. This enable the player to only move after they roll the dice at their turn.  
+* The "move" player button will be disabled by default and is only enabled after the dice button has been clicked. This allow the player to only move after they roll the dice during their turn.  
 
 ```
 function enableMovePlayerBtn() {
@@ -110,8 +110,9 @@ function disableMovePlayerBtn() {
 }
 ```
 
-* Moving the players move - using the show and hide methods mention above, the icons of both player will be turn on and off according to the new position of the player which is determined by current position plus dice number the player has rolled.
-Before  
+* Moving the players -     
+Using the show and hide methods mention above, the icons of both players will be turn on and off according to the new position of the player which is determined by current position plus dice number the player has rolled.
+  
 In HTML, class name of dontShow is tagged to each player icon in individual tiles. Example of tile number 30 is shown below. 
 ```
 <div id="r0I5" class="tile">30 <br>
@@ -138,7 +139,8 @@ function boardCharacters() {
 }
 ```
 
-* Determin the new tile the player icon is to be displayed and provide a message to player to inform them. Afterwards, disable the move player button as mentioned before. 
+* There will be a message to inform the player about the new position. After moving, the "move player" button will be disabled again. Afterwards, disable the move player button as mentioned before. 
+
 ```
 function movePlayers() {
   if (character === "C") {
@@ -155,44 +157,13 @@ function movePlayers() {
 ```
 
 * Bonus and obstacles -
-Landing on a sanke will get the player back by a few tiles while landing on the ladder gives player advantage of few tiles. Alert box is also added to inform player that they have either landed on the ladder or snake. 
+Landing on a snake will get the player to move back by a few tiles while landing on the ladder gives the player advantage of moving forward few tiles. Alert box is also added to inform player that they have either landed on the ladder or snake. 
+
 ![LadderPopUpMsg](https://user-images.githubusercontent.com/122252464/220667661-3ac834d5-f1a5-4b86-8816-5b0f8173e569.jpg)
+
 ![SnakePopUpMsg](https://user-images.githubusercontent.com/122252464/220667717-a0a78b52-5823-4828-8031-445820598a59.jpg)
 
-Example below show the code for ladder.  
-Code before:-
-```
-function bonusLadders() {
-  if (currC === 3) {
-    currC = 11;
-    alert("WOW Ladder! Cat moves to tile 11!");
-    playerlandOnNewTileNumMsg();
-  } else if (currC === 7) {
-    currC = 19;
-    alert("WOW Ladder! Cat moves to tile 19!");
-    playerlandOnNewTileNumMsg();
-  } else if (currC === 21) {
-    currC = 28;
-    alert("WOW Ladder! Cat moves to tile 28!");
-    playerlandOnNewTileNumMsg();
-  }
-  if (currM === 3) {
-    currM = 11;
-    alert("WOW a Ladder! Monkey moves to tile 11!");
-    playerlandOnNewTileNumMsg();
-  } else if (currM === 7) {
-    currM = 19;
-    alert("WOW a Ladder! Monkey moves to tile 19!");
-    playerlandOnNewTileNumMsg();
-  } else if (currM === 21) {
-    currM = 28;
-    alert("WOW a Ladder! Monkey moves to tile 28!");
-    playerlandOnNewTileNumMsg();
-  }
-}
-```
-
-Code after:-
+Example below show the code for ladder:-  
 ```
 function bonusLadders() {
   const ladderPositions = {
@@ -215,13 +186,8 @@ function bonusLadders() {
 }
 ```
 
-* Finally combining all the different function happen when player click the move player button. In summary:- 
-- when click move player button, player will move by the number of dice rolled plus the current tile number (the new current tile number is previouse tile number plus dice rolled).
-- if the new tile number is tile 30, player wins. if not game continues.
-- if the new tile number has ladder, player will transfer up the tile where the ladder's top and land on another new tile.
-- if the new tile number has snake, player will transfer down the tile where the snake's tail is located and land on another new tile.
-- the player character will be displayed at the final new tile and the all the previous player character on the old tile will not be displayed.
-- msg of the play final location will be displayed at Player moves to "tile X".
+* When the player clicks the move player button, flipCharacter function will run and the various functions will run accordingly. 
+
 ```
 function flipCharacter() {
   moveCharacters.addEventListener("click", function moveCharacters() {
@@ -235,7 +201,19 @@ function flipCharacter() {
 }
 flipCharacter();
 ``` 
+In summary:-
 
+When the player clicks the move player button, the player will move by the number of dice rolled plus the current tile number (For example, if the player is on tile 2 and rolled a "3", the player will move to tile 5).
+
+If the new tile number is tile 30, the player wins. If not the game will continue.
+
+If the player lands on a tile with a snake, the player will move down to the tile where the snake's tail is located. (For example, if the current player is on tile 10 and rolled a “2”, the player will move to tile 12. But there is a snake at tile 12 so the player moves down to tile 2 instead. Tile 2 is the tail of the snake.)
+
+If the player lands on a tile with a ladder, the player will transfer up to the tile where the top of the ladder is located.(For example, if the current player is on tile 1 and rolled a “2”, the player will move to tile 3. But there is a ladder at tile 3 so the player moves forward to tile 11 instead. Tile 11 is the top of the ladder. ) 
+
+The final position of the player in that round will be determined by the condition of the tile. The player icon will be displayed on its turn’s final position. 
+
+Message of the player’s final location will be displayed at Player moved to "tile X".
 <br>
 
 ## Final OutLook of the Snake and Ladder 2 Player Game
@@ -252,7 +230,7 @@ flipCharacter();
 
 ## Future Impovements
 
-1. (Multipplayers) Able to host more than 2 players
+1. (Multiplayers) Able to host more than 2 players 
 - 3 players
 - 4 players
 
@@ -260,7 +238,7 @@ flipCharacter();
 
 3. Different levels
 - lvl 2 (tile numbers increase to 50, with 2 more snakes and 1 ladder)
-- lvl 3 (tile numbers increased to 100, wiht 2 more long snakes and 2 short ladders)
+- lvl 3 (tile numbers increased to 100, with 2 more long snakes and 2 short ladders)
 
   <br>
 
@@ -269,11 +247,17 @@ flipCharacter();
 <br>
 
 ## References
-[Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
-[How to disable and enable buttons](https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
+- [Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
+- [How to disable and enable buttons](https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
+
+
 
 <br>
 
 ## Game Asset Atrributions
 The below assets in this game are not owned by me. All rights belong to their original owners and artists as shown in the links below:-
-
+- [Arrow](https://www.educative.io/answers/how-to-create-the-arrow-symbol-in-html)
+- [Ladder](https://fontawesomeicons.com/bootstrap/icons/ladder)
+- [Snake](https://fontawesomeicons.com/emoji/icons/snake#:~:text=Unicode%20of%20Snake%20%22%F0%9F%90%8D%22%20Emoji) 
+- [Dice](https://fontawesomeicons.com/emoji/icons/game-die) 
+- [Background](https://stock.adobe.com/images/watercolor-group-of-trees-fir-pine-cedar-fir-tree-green-forest-landscape-forest-landscape-drawing-on-white-isolated-background-misty-forest-in-haz-ecological-poster-watercolor-painting/234605262)
