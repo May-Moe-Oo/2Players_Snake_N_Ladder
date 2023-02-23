@@ -158,7 +158,9 @@ function movePlayers() {
 
 * Bonus and obstacles -
 Landing on a snake will get the player to move back by a few tiles while landing on the ladder gives the player advantage of moving forward few tiles. Alert box is also added to inform player that they have either landed on the ladder or snake. 
+
 ![LadderPopUpMsg](https://user-images.githubusercontent.com/122252464/220667661-3ac834d5-f1a5-4b86-8816-5b0f8173e569.jpg)
+
 ![SnakePopUpMsg](https://user-images.githubusercontent.com/122252464/220667717-a0a78b52-5823-4828-8031-445820598a59.jpg)
 
 Example below show the code for ladder:-  
