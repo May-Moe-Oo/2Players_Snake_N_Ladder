@@ -126,7 +126,7 @@ In CSS,
    display:none;
 }
 ```
-In Javascript, using DOM manipulation, player icons of tile 2 to 30 can be manipulated to either show or hide.
+In Javascript, using DOM manipulation, player icons inside the tiles can be manipulated to either show or hide.
 ```
 function boardCharacters() {
   if (character === "C") {
