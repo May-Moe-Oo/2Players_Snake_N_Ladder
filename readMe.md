@@ -52,6 +52,20 @@ I started my programming journey due to my curiosity about how things become. Th
 
 <br>
 
+## User Story
+| When user ...                | What happens...                                                               |
+|------------------------------|-------------------------------------------------------------------------------|
+| Click Game On! Button        | Instruction screen is disaplyed.                                              |
+| Click Let's Play Button      | The game screen is displayed.                                                 |
+| Click Roll the Dice Button   | Random dice number is genurated and that number is displayed as "you roll: 5" |
+| Click Move Player Button     | The player icon will move to the new tile. A message will inform the player where he/she is moved to. |
+| Land on Snake tile           | The player will move down to the end of the tail.                             |
+| Land on Ladder tile          | The player will move up to the top of the ladder.                             |
+| Player reach tile 30         | Game end and the result page will display the winner.                         |
+| Click Challenge Again! Button| Player will returns to the start screen.                                      |
+
+<br>
+
 ## Approach to Deployment
 
 There will be 4 different screens in this game using different div.
@@ -226,6 +240,13 @@ Message of the player’s final location will be displayed at Player moved to "t
 
 ## Learning Points
 
+It is very important to think of the initial plan as detailed as possible and plan the structure of the game. 
+When faced with a problem, take ant step at a time and pinpoint the root cause. 
+Write down small goals to do and code them one line at a time. 
+It is okay to be stuck and ask for advice and help as it has helped me to learn and look at things from a different perspective. 
+To be able to solve a small problem and bug one at a time is more important than worrying about the bigger problem. 
+Take breaks as needed to refresh the mind when facing a mental block, no point staring at the laptop. 
+
 <br>
 
 ## Future Impovements
@@ -240,6 +261,10 @@ Message of the player’s final location will be displayed at Player moved to "t
 - Level 2 (tile numbers increase to 50, with 2 more snakes and 1 ladder)
 - Level 3 (tile numbers increased to 100, with 2 more long snakes and 2 short ladders)
 
+4. Animation
+
+5. Sounds
+
   <br>
 
 ## Summary
@@ -249,8 +274,6 @@ Message of the player’s final location will be displayed at Player moved to "t
 ## References
 - [Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
 - [How to disable and enable buttons](https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
-
-
 
 <br>
 
