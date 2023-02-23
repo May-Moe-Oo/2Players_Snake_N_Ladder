@@ -240,12 +240,13 @@ Message of the player’s final location will be displayed at Player moved to "t
 
 ## Learning Points
 
-It is very important to think of the initial plan as detailed as possible and plan the structure of the game. 
-When faced with a problem, take ant step at a time and pinpoint the root cause. 
-Write down small goals to do and code them one line at a time. 
-It is okay to be stuck and ask for advice and help as it has helped me to learn and look at things from a different perspective. 
-To be able to solve a small problem and bug one at a time is more important than worrying about the bigger problem. 
-Take breaks as needed to refresh the mind when facing a mental block, no point staring at the laptop. 
+- It is very important to think of the initial plan as detailed as possible and plan the structure of the game.
+- A good architectural framework will enable a better coding experience to keep codes clean and . This is something I need to work on.  
+- When faced with a problem, take ant step at a time and pinpoint the root cause. 
+- Write down small goals to do and code them one line at a time. 
+- It is okay to be stuck and ask for advice and help as it has helped me to learn and look at things from a different perspective. 
+- To be able to solve a small problem and bug one at a time is more important than worrying about the bigger problem. 
+- Take breaks as needed to refresh the mind when facing a mental block, no point staring at the laptop. 
 
 <br>
 
@@ -268,12 +269,14 @@ Take breaks as needed to refresh the mind when facing a mental block, no point s
   <br>
 
 ## Summary
+This is my very first project in my coding journey. As a newbie to the coding world, it was a challenge to change the way I think. I had learned to think of things on a smaller scale, look deeper in detail, be patient and locate the core issues in a problem. I had learn the importance of structuring codes framework. As my codes were not well structured, it was not very easy to locate the errors so I had to tidy them up. I hope to further develop this mindset and improve my skills to be able to create better solutions.  
 
 <br>
 
 ## References
 - [Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
 - [How to disable and enable buttons](https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
+- 
 
 <br>
 
