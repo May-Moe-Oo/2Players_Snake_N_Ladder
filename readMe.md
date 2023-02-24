@@ -252,11 +252,13 @@ Message of the player’s final location will be displayed at Player moved to "t
 
 ## Future Impovements
 
-1. (Multiplayers) Able to host more than 2 players 
+1. Players number selection (Multiplayers)
+- 2 players
 - 3 players
 - 4 players
 
 2. Player Characters selection
+- All player to be able to select the characters icons of their choice. 
 
 3. Different levels
 - Level 2 (tile numbers increase to 50, with 2 more snakes and 1 ladder)
@@ -276,7 +278,7 @@ This is my very first project in my coding journey. As a newbie to the coding wo
 ## References
 - [Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
 - [How to disable and enable buttons](https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
-- 
+
 
 <br>
 
