@@ -52,6 +52,20 @@ I started my programming journey due to my curiosity about how things become. Th
 
 <br>
 
+## User Story
+| When user ...                | What happens...                                                               |
+|------------------------------|-------------------------------------------------------------------------------|
+| Click Game On! Button        | Instruction screen is disaplyed.                                              |
+| Click Let's Play Button      | The game screen is displayed.                                                 |
+| Click Roll the Dice Button   | Random dice number is genurated and that number is displayed as "you roll: 5" |
+| Click Move Player Button     | The player icon will move to the new tile. A message will inform the player where he/she is moved to. |
+| Land on Snake tile           | The player will move down to the end of the tail.                             |
+| Land on Ladder tile          | The player will move up to the top of the ladder.                             |
+| Player reach tile 30         | Game end and the result page will display the winner.                         |
+| Click Challenge Again! Button| Player will returns to the start screen.                                      |
+
+<br>
+
 ## Approach to Deployment
 
 There will be 4 different screens in this game using different div.
@@ -226,30 +240,44 @@ Message of the player’s final location will be displayed at Player moved to "t
 
 ## Learning Points
 
+- It is very important to think of the initial plan as detailed as possible and plan the structure of the game.
+- A good architectural framework will enable a better coding experience to keep codes clean and . This is something I need to work on.  
+- When faced with a problem, take ant step at a time and pinpoint the root cause. 
+- Write down small goals to do and code them one line at a time. 
+- It is okay to be stuck and ask for advice and help as it has helped me to learn and look at things from a different perspective. 
+- To be able to solve a small problem and bug one at a time is more important than worrying about the bigger problem. 
+- Take breaks as needed to refresh the mind when facing a mental block, no point staring at the laptop. 
+
 <br>
 
 ## Future Impovements
 
-1. (Multiplayers) Able to host more than 2 players 
+1. Players number selection (Multiplayers)
+- 2 players
 - 3 players
 - 4 players
 
 2. Player Characters selection
+- All player to be able to select the characters icons of their choice. 
 
 3. Different levels
 - Level 2 (tile numbers increase to 50, with 2 more snakes and 1 ladder)
 - Level 3 (tile numbers increased to 100, with 2 more long snakes and 2 short ladders)
 
+4. Animation
+
+5. Sounds
+
   <br>
 
 ## Summary
+This is my very first project in my coding journey. As a newbie to the coding world, it was a challenge to change the way I think. I had learned to think of things on a smaller scale, look deeper in detail, be patient and locate the core issues in a problem. I had learn the importance of structuring codes framework. As my codes were not well structured, it was not very easy to locate the errors so I had to tidy them up. I hope to further develop this mindset and improve my skills to be able to create better solutions.  
 
 <br>
 
 ## References
 - [Game History](https://timesofindia.indiatimes.com/who-invented-the-board-game-snakes-and-ladders/articleshow/3585003.cms)
 - [How to disable and enable buttons](https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button)
-
 
 
 <br>
