@@ -20,7 +20,7 @@ const board = document.getElementById("board");
 const rolledDice = document.getElementById("diceFaces");
 const diceButton = document.getElementById("dicebutton");
 let player = document.getElementById("currentPlayer");
-const moveCharacters = document.getElementById("movePlayer");
+const moveCharactersBtn = document.getElementById("movePlayer");
 let playerNewTileNum = document.getElementById("newTileNum");
 let winner = document.getElementById("winner");
 /*----- event listeners -----*/
@@ -44,9 +44,7 @@ function startButton() {
 }
 
 function restartButton() {
-  document
-    .getElementById("restartButton")
-    .addEventListener("click", function () {
+  document.getElementById("restartButton").addEventListener("click", function () {
       screens[0].style.display = "block";
       screens[1].style.display = "none";
       screens[2].style.display = "none";
@@ -91,7 +89,7 @@ function boardCharacters() {
 }
 
 function flipCharacter() {
-  moveCharacters.addEventListener("click", function moveCharacters() {
+  moveCharactersBtn.addEventListener("click", function moveCharacters() {
     changePlayer();
     movePlayers();
     determineWinner();
@@ -209,11 +207,11 @@ function playerlandOnNewTileNumMsg() {
 }
 
 function enableMovePlayerBtn() {
-  moveCharacters.removeAttribute("disabled");
+  moveCharactersBtn.removeAttribute("disabled");
 }
 
 function disableMovePlayerBtn() {
-  moveCharacters.disabled = true;
+  moveCharactersBtn.disabled = true;
 }
 
 function enableDiceBtn() {
