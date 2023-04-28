@@ -48,7 +48,7 @@ I started my programming journey due to my curiosity about how things become. Th
 
 ## Game Deployment
 
-[Click to Play](https://maymoeoo95.github.io/2Players_Snake_N_Ladder/)
+[Click to Play](https://may-moe-oo.github.io/2Players_Snake_N_Ladder/)
 
 <br>
 
